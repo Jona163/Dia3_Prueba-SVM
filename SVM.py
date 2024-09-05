@@ -3,7 +3,7 @@
 # Descripción: Código para una simulación de batalla Pokémon de estilo retro
 # GitHub: https://github.com/Jona163
 
-#Importar libreria
+#Importacion libreria de Numpy
 import numpy as np
 
 class SVM:
