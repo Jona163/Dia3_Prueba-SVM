@@ -137,6 +137,7 @@ if __name__ == "__main__":
         x1_max = np.amax(X[:, 1])
         ax.set_ylim([x1_min - 3, x1_max + 3])
 
+        #Plotear y mostrar
         plt.show()
-
+    #Visualizar la svm
     visualizar_svm()
