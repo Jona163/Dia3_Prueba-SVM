@@ -93,5 +93,22 @@ if __name__ == "__main__":
 
     # Impresión de la precisión del modelo
     print("Precisión del clasificador SVM:", precision(y_prueba, predicciones))
+# Visualización del SVM y los hiperplanos
+    def visualizar_svm():
+        """
+        Visualiza los datos, el hiperplano y las márgenes del clasificador SVM.
+        """
+        def obtener_valor_hiperplano(x, w, b, offset):
+            return (-w[0] * x + b + offset) / w[1]
 
+        fig = plt.figure()
+        ax = fig.add_subplot(1, 1, 1)
+        plt.scatter(X[:, 0], X[:, 1], marker="o", c=y)
+
+        x0_1 = np.amin(X[:, 0])
+        x0_2 = np.amax(X[:, 0])
+
+        # Hiperplano
+        x1_1 = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, 0)
+        x1_2 = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, 0)
 
