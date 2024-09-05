@@ -1,6 +1,6 @@
 # Autor: Jonathan Hernández
 # Fecha: 04 Septiembre 2024
-# Descripción: Código para una simulación de batalla Pokémon de estilo retro
+# Descripción: Código para simulacion de los SVM (Maquinas de soporte Vectorial)
 # GitHub: https://github.com/Jona163
 
 #Importacion libreria de Numpy
