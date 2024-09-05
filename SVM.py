@@ -1,3 +1,9 @@
+# Autor: Jonathan Hernández
+# Fecha: 04 Septiembre 2024
+# Descripción: Código para una simulación de batalla Pokémon de estilo retro
+# GitHub: https://github.com/Jona163
+
+#Importar libreria
 import numpy as np
 
 class SVM:
@@ -60,6 +66,7 @@ class SVM:
         aproximacion = np.dot(X, self.w) - self.b
         return np.sign(aproximacion)
 
+
 # Pruebas
 if __name__ == "__main__":
     # Importaciones necesarias
@@ -78,7 +85,6 @@ if __name__ == "__main__":
         X, y, test_size=0.2, random_state=123
     )
 
-
     # Creación y ajuste del modelo SVM
     clasificador = SVM()
     clasificador.ajustar(X_entrenamiento, y_entrenamiento)
@@ -93,7 +99,8 @@ if __name__ == "__main__":
 
     # Impresión de la precisión del modelo
     print("Precisión del clasificador SVM:", precision(y_prueba, predicciones))
-# Visualización del SVM y los hiperplanos
+
+    # Visualización del SVM y los hiperplanos
     def visualizar_svm():
         """
         Visualiza los datos, el hiperplano y las márgenes del clasificador SVM.
@@ -112,7 +119,7 @@ if __name__ == "__main__":
         x1_1 = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, 0)
         x1_2 = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, 0)
 
-  # Márgenes
+        # Márgenes
         x1_1_m = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, -1)
         x1_2_m = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, -1)
 
@@ -132,5 +139,3 @@ if __name__ == "__main__":
         plt.show()
 
     visualizar_svm()
-
-
