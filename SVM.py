@@ -59,3 +59,22 @@ class SVM:
         """
         aproximacion = np.dot(X, self.w) - self.b
         return np.sign(aproximacion)
+
+# Pruebas
+if __name__ == "__main__":
+    # Importaciones necesarias
+    from sklearn.model_selection import train_test_split
+    from sklearn import datasets
+    import matplotlib.pyplot as plt
+
+    # Creación de datos de prueba
+    X, y = datasets.make_blobs(
+        n_samples=50, n_features=2, centers=2, cluster_std=1.05, random_state=40
+    )
+    y = np.where(y == 0, -1, 1)  # Reasignación de etiquetas
+
+    # División de los datos en conjunto de entrenamiento y prueba
+    X_entrenamiento, X_prueba, y_entrenamiento, y_prueba = train_test_split(
+        X, y, test_size=0.2, random_state=123
+    )
+
