@@ -25,7 +25,8 @@ class SVM:
         self.iteraciones = iteraciones
         self.w = None  # Pesos
         self.b = None  # Sesgo
-
+        
+#Definir funcion para ajustar el modelo
     def ajustar(self, X, y):
         """
         Ajusta el modelo SVM a los datos de entrada X y las etiquetas y.
