@@ -78,3 +78,20 @@ if __name__ == "__main__":
         X, y, test_size=0.2, random_state=123
     )
 
+
+    # Creación y ajuste del modelo SVM
+    clasificador = SVM()
+    clasificador.ajustar(X_entrenamiento, y_entrenamiento)
+
+    # Predicciones con el conjunto de prueba
+    predicciones = clasificador.predecir(X_prueba)
+
+    # Función para calcular la precisión
+    def precision(y_real, y_pred):
+        precision = np.sum(y_real == y_pred) / len(y_real)
+        return precision
+
+    # Impresión de la precisión del modelo
+    print("Precisión del clasificador SVM:", precision(y_prueba, predicciones))
+
+
