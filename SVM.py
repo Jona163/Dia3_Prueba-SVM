@@ -112,3 +112,25 @@ if __name__ == "__main__":
         x1_1 = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, 0)
         x1_2 = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, 0)
 
+  # Márgenes
+        x1_1_m = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, -1)
+        x1_2_m = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, -1)
+
+        x1_1_p = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, 1)
+        x1_2_p = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, 1)
+
+        # Graficar hiperplano y márgenes
+        ax.plot([x0_1, x0_2], [x1_1, x1_2], "y--")
+        ax.plot([x0_1, x0_2], [x1_1_m, x1_2_m], "k")
+        ax.plot([x0_1, x0_2], [x1_1_p, x1_2_p], "k")
+
+        # Límites del gráfico
+        x1_min = np.amin(X[:, 1])
+        x1_max = np.amax(X[:, 1])
+        ax.set_ylim([x1_min - 3, x1_max + 3])
+
+        plt.show()
+
+    visualizar_svm()
+
+
