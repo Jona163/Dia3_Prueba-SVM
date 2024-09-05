@@ -127,7 +127,7 @@ if __name__ == "__main__":
         x1_1_p = obtener_valor_hiperplano(x0_1, clasificador.w, clasificador.b, 1)
         x1_2_p = obtener_valor_hiperplano(x0_2, clasificador.w, clasificador.b, 1)
 
-        # Graficar hiperplano y márgenes
+        # Graficar hiperplano y márgenes del svm
         ax.plot([x0_1, x0_2], [x1_1, x1_2], "y--")
         ax.plot([x0_1, x0_2], [x1_1_m, x1_2_m], "k")
         ax.plot([x0_1, x0_2], [x1_1_p, x1_2_p], "k")
